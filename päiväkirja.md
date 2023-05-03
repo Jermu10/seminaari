@@ -18,7 +18,7 @@ Sovellus on tehty reactilla nettisivuksi. Reactissa käytettyjä juttuja:
 - node.textContent = Extract the text content of each element
 - function* = Generator function
 
-Sovellus ja varsinkin sen kommentit luotu tekoälyn avulla: https://chat.openai.com
+Sovellus ja varsinkin sen kommentit luotu tekoälyä käyttäen: https://chat.openai.com
 
 Suomenkielen sanat saatu kotimaisten kielten keskus: https://kaino.kotus.fi/sanat/nykysuomi/
 
@@ -52,40 +52,44 @@ Eipä siinä oikein sen kummempaa. Projekti luotu ja poistetaan sieltä vähän 
     
 ### 2 - Luodaan App.js algorytmi ja muut funktiot
 
-  Tässä käytin eniten tekoälyn apua, koska itselle moni asia oli uutta. Tässä suurin osa algorytmistä kommentteineen:
-  
-    // Function to handle form submission
-    const handleSubmit = async (e) => {
-      e.preventDefault(); // Prevent the form from submitting normally
-      const startTime = Date.now(); // Record the start time for performance measurement
-      const response = await fetch('/kotus-sanalista_v1.xml'); // Fetch a list of Finnish words
-      const xmlText = await response.text(); // Get the XML content as text
-      const parser = new DOMParser(); // Create a new DOM parser
-      const xml = parser.parseFromString(xmlText, 'text/xml'); // Parse the XML text into an XML document
-      const words = Array.from(xml.getElementsByTagName('s')) // Get an array of <s> elements
-        .map(node => node.textContent) // Extract the text content of each element
-        .filter(word => word.length <= input.length && canFormWord(input, word)) // Filter words that can't be formed from the user input
-        .sort((a, b) => b.length - a.length); // Sort words by length in descending order
-      const maxLength = words[0]?.length || 0; // Get the length of the longest word, or zero if there are no words
-      const longestWords = words.filter(word => word.length === maxLength).slice(0, 5); // Get the five longest words
-      setResult(longestWords); // Update the result state variable with the list of longest words
-      const endTime = Date.now(); // Record the end time for performance measurement
-      console.log(`Found ${longestWords.length} words in ${endTime - startTime} ms`); // Log the result and elapsed time to the console
-    };
-    
-    
-    // Function to check if a given word can be formed from a set of letters
-      const canFormWord = (letters, word) => {
-        const letterCount = countLetters(letters.toLowerCase()); // Get the frequency of letters in the given set
-        const wordCount = countLetters(word.toLowerCase()); // Get the frequency of letters in the given word
-        // Check if each letter in the word occurs at least as many times as in the set
-        for (let [letter, count] of wordCount) {
-          if (!letterCount.has(letter) || letterCount.get(letter) < count) {
-            return false; // If any letter is missing or has insufficient count, return false
-          }
-        }
-        return true; // If all letters are present in sufficient count, return true
-      };
+  Tässä käytin eniten tekoälyn apua, koska itselle moni asia oli uutta. Koodissakäytetään algorytmejä kuten: 
+
+- filter
+- map
+- sort
+
+        // Function to handle form submission
+        const handleSubmit = async (e) => {
+          e.preventDefault(); // Prevent the form from submitting normally
+          const startTime = Date.now(); // Record the start time for performance measurement
+          const response = await fetch('/kotus-sanalista_v1.xml'); // Fetch a list of Finnish words
+          const xmlText = await response.text(); // Get the XML content as text
+          const parser = new DOMParser(); // Create a new DOM parser
+          const xml = parser.parseFromString(xmlText, 'text/xml'); // Parse the XML text into an XML document
+          const words = Array.from(xml.getElementsByTagName('s')) // Get an array of <s> elements
+            .map(node => node.textContent) // Extract the text content of each element
+            .filter(word => word.length <= input.length && canFormWord(input, word)) // Filter words that can't be formed from the user input
+            .sort((a, b) => b.length - a.length); // Sort words by length in descending order
+          const maxLength = words[0]?.length || 0; // Get the length of the longest word, or zero if there are no words
+          const longestWords = words.filter(word => word.length === maxLength).slice(0, 5); // Get the five longest words
+          setResult(longestWords); // Update the result state variable with the list of longest words
+          const endTime = Date.now(); // Record the end time for performance measurement
+          console.log(`Found ${longestWords.length} words in ${endTime - startTime} ms`); // Log the result and elapsed time to the console
+        };
+
+
+        // Function to check if a given word can be formed from a set of letters
+          const canFormWord = (letters, word) => {
+            const letterCount = countLetters(letters.toLowerCase()); // Get the frequency of letters in the given set
+            const wordCount = countLetters(word.toLowerCase()); // Get the frequency of letters in the given word
+            // Check if each letter in the word occurs at least as many times as in the set
+            for (let [letter, count] of wordCount) {
+              if (!letterCount.has(letter) || letterCount.get(letter) < count) {
+                return false; // If any letter is missing or has insufficient count, return false
+              }
+            }
+            return true; // If all letters are present in sufficient count, return true
+          };
     
 ### 3 - Generoiva funktio
 
@@ -114,7 +118,9 @@ Generator-Function: A generator-function is defined like a normal function, but 
  
 
 
+## Yhteenveto
 
+Itse sovellukseen olen tyytyväinen. Se about on mitä halusinkin. Sovelluksen tekeminen ja varsinkin alussa ajateltu eri algorytmien vertailu ei toteutunut, mitä olisin toivonut. Mutta paljon uutta opittin ja tehtiin, mitä ei ennen tämän sovelluksen tekoa en ollut kuullukkaan esim. function*. Vähemmän on tullut nodella ja Reactilla mitään tehtyä, joten niissäkin tuli hyvää lisätuntumaa. 
 
   
   
