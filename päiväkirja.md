@@ -74,8 +74,24 @@ Eipä siinä oikein sen kummempaa. Projekti luotu ja poistetaan sieltä vähän 
     };
     
     
+    // Function to check if a given word can be formed from a set of letters
+      const canFormWord = (letters, word) => {
+        const letterCount = countLetters(letters.toLowerCase()); // Get the frequency of letters in the given set
+        const wordCount = countLetters(word.toLowerCase()); // Get the frequency of letters in the given word
+        // Check if each letter in the word occurs at least as many times as in the set
+        for (let [letter, count] of wordCount) {
+          if (!letterCount.has(letter) || letterCount.get(letter) < count) {
+            return false; // If any letter is missing or has insufficient count, return false
+          }
+        }
+        return true; // If all letters are present in sufficient count, return true
+      };
     
-    
+### 3 - Generoiva funktio
+
+Tässä ei ilmeisesti olisi tarvinnut edes generoivaa funktiota käyttää, mutta toimi se silti näinkin.
+
+        Generator-Function: A generator-function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. The yield statement suspends the function’s execution and sends a value back to the caller, but retains enough state to enable the function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. - https://www.geeksforgeeks.org/javascript-generator/
   
  
 
