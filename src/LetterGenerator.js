@@ -41,7 +41,7 @@ export default function LetterGenerator() {
     setLetters([...letters, vowelGenerator.next().value]);
   };
 
-  // Return the JSX code for rendering the component
+  
   return (
     <div className="LetterGenerator">
       {/* Define a button for generating a consonant */}
