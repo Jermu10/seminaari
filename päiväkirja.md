@@ -94,6 +94,7 @@ Tässä ei ilmeisesti olisi tarvinnut edes generoivaa funktiota käyttää, mutt
 Generator-Function: A generator-function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. The yield statement suspends the function’s execution and sends a value back to the caller, but retains enough state to enable the function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. Lähde: https://www.geeksforgeeks.org/javascript-generator/
 
 
+
      // Define a generator function for generating random vowels
     function* randomVowelGenerator() {
       const vowels = 'aeiouyäö';
