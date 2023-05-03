@@ -1,3 +1,3 @@
 # Ohjelmistokehityksen teknologioita seminaari
 
-Koulutyö
+Raportti --> päiväkirja.md
