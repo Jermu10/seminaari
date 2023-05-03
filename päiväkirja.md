@@ -24,9 +24,9 @@ Suomenkielen sanat saatu kotimaisten kielten keskus: https://kaino.kotus.fi/sana
 
 ## Sovelluksen luonti
 
-- 1. Aluksi luotiin react projekti
-- 2. Seuraavaksi luotiin sivu joka ottaa vastaan satunnaisia kirjaimia ja palauttaa pisimmät sanat niistä
-- 3. Sitten luotiin kaksi nappia, joita painamalla sivuille tulee satunnaisia kirjaimia (joko konsonantti tai vokaali)
+1. Aluksi luotiin react projekti
+2. Seuraavaksi luotiin sivu joka ottaa vastaan satunnaisia kirjaimia ja palauttaa pisimmät sanat niistä
+3. Sitten luotiin kaksi nappia, joita painamalla sivuille tulee satunnaisia kirjaimia (joko konsonantti tai vokaali)
 
   
   
