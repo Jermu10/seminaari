@@ -10,3 +10,7 @@ Ideana olisi ehkä kokeilla erilaisia algorytmejä.
 ### create-react-app letters
 
 Aluksi tehdään react työpohja, johonka sovellusta lähdetään luomaan. Tässä alkuvaiheessa etsin myös käsiini listan suomen sanoista jotka löytyi Kotimaisten kielten keskukselta: https://kaino.kotus.fi/sanat/nykysuomi/
+
+### Inputin luonti
+
+Alkuun haluan, luoda inputin, josta sovellus saa ne kirjaimet, jolla sanaa etsitään sanalistasta.
