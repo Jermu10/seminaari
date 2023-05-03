@@ -14,3 +14,30 @@ Aluksi tehdään react työpohja, johonka sovellusta lähdetään luomaan. Täss
 ### Inputin luonti
 
 Alkuun haluan, luoda inputin, josta sovellus saa ne kirjaimet, jolla sanaa etsitään sanalistasta.
+
+          <form onSubmit={handleSubmit}>
+        <label>
+          Enter 9 letters:
+          <input type="text" value={input} onChange={handleChange} />
+        </label>
+        <button type="submit">Find longest words</button>
+      </form>
+      
+Luodaan usestate inputille
+
+    const [input, setInput] = useState('');
+    
+Luodaan funktio joka handlaa inputtia
+
+    const handleChange = (e) => {
+    setInput(e.target.value);
+    };
+
+### Luodaan countLetter jas canFormWord funktiot
+
+Aikaa säästääkseni selitän nyt vain suullisesti. 
+  
+  
+  
+  
+  
