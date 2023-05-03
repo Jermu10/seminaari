@@ -91,8 +91,25 @@ Eipä siinä oikein sen kummempaa. Projekti luotu ja poistetaan sieltä vähän 
 
 Tässä ei ilmeisesti olisi tarvinnut edes generoivaa funktiota käyttää, mutta toimi se silti näinkin.
 
-Generator-Function: A generator-function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. The yield statement suspends the function’s execution and sends a value back to the caller, but retains enough state to enable the function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. - https://www.geeksforgeeks.org/javascript-generator/
-  
+Generator-Function: A generator-function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. The yield statement suspends the function’s execution and sends a value back to the caller, but retains enough state to enable the function to resume where it is left off. When resumed, the function continues execution immediately after the last yield run. Lähde: https://www.geeksforgeeks.org/javascript-generator/
+
+
+     // Define a generator function for generating random vowels
+    function* randomVowelGenerator() {
+      const vowels = 'aeiouyäö';
+      while (true) {
+        // Yield a random vowel from the 'vowels' string
+        yield vowels[Math.floor(Math.random() * vowels.length)];
+      }
+    }
+    
+      // Define a function for handling the 'Vowel' button click
+      const handleVowelClick = () => {
+        // Create a new instance of the vowel generator
+        const vowelGenerator = randomVowelGenerator();
+        // Add the next generated vowel to the 'letters' array using the 'setLetters' function
+        setLetters([...letters, vowelGenerator.next().value]);
+      };
  
 
 
