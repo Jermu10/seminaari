@@ -2,7 +2,7 @@
 
 ## Johdatus
 
-Briteissä tunnettu visailu ohjelma countdownin letters round sovellus siis kyseessä. Sovellus:
+Briteissä tunnettu visailuohjelma countdownin letters round sovellus siis kyseessä. Sovellus:
 - Antaa satunnaisen konsonantin tai vokaalin nappia painamalla
 - Palauttaa (max 5) pisintä suomenkielen sanaa (xml tiedosto), mitä satunnaisista tekstikentän kirjaimista pystyy muodostaa
 - Kertoo konsolissa kauan sanojen haku kesti
@@ -20,7 +20,13 @@ Sovellus on tehty reactilla nettisivuksi. Reactissa käytettyjä juttuja:
 
 Sovellus ja varsinkin sen kommentit luotu tekoälyn avulla: https://chat.openai.com
 
+Suomenkielen sanat saatu kotimaisten kielten keskus: https://kaino.kotus.fi/sanat/nykysuomi/
 
+## Sovelluksen luonti
+
+- 1. Aluksi luotiin react projekti
+- 2. Seuraavaksi luotiin sivu joka ottaa vastaan satunnaisia kirjaimia ja palauttaa pisimmät sanat niistä
+- 3. Sitten luotiin kaksi nappia, joita painamalla sivuille tulee satunnaisia kirjaimia (joko konsonantti tai vokaali)
 
   
   
