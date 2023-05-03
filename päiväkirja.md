@@ -120,7 +120,7 @@ Generator-Function: A generator-function is defined like a normal function, but 
 
 ## Yhteenveto
 
-Itse sovellukseen olen tyytyväinen. Se about on mitä halusinkin. Sovelluksen tekeminen ja varsinkin alussa ajateltu eri algorytmien vertailu ei toteutunut, mitä olisin toivonut. Mutta paljon uutta opittin ja tehtiin, mitä ei ennen tämän sovelluksen tekoa en ollut kuullukkaan esim. function*. Vähemmän on tullut nodella ja Reactilla mitään tehtyä, joten niissäkin tuli hyvää lisätuntumaa. 
+Itse sovellukseen olen tyytyväinen. Se about on mitä halusinkin. Sovelluksen tekeminen ja varsinkin alussa ajateltu eri algorytmien vertailu ei toteutunut, mitä olisin toivonut. Mutta paljon uutta opittin ja tehtiin, mitä ei ennen tämän sovelluksen tekoa ollut kuullukkaan esim. function*. Vähemmän on tullut nodella ja Reactilla mitään tehtyä, joten niissäkin tuli hyvää lisätuntumaa. 
 
   
   
