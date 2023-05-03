@@ -54,9 +54,9 @@ Eipä siinä oikein sen kummempaa. Projekti luotu ja poistetaan sieltä vähän 
 
   Tässä käytin eniten tekoälyn apua, koska itselle moni asia oli uutta. Koodissakäytetään algorytmejä kuten: 
 
-- filter
-- map
-- sort
+- filter = creates a new array with all elements that pass a test defined by a function
+- map = creates a new array by performing a function on each element of the original array
+- sort = sorts the elements of an array in place and returns the sorted array
 
         // Function to handle form submission
         const handleSubmit = async (e) => {
