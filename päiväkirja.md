@@ -1,43 +1,27 @@
-# Päiväkirja letters sovellus
+# Letters sovellus
 
-## Ajatus
+## Johdatus
 
-Alkuperäinen ajatus on tehdä Reactilla sovellus johon syötetään 9 kirjainta ja se kertoo suomen sanakirjasta pisimmät sanat. Ohjelma myös logittaa kauan tämä haku kestää.
-Ideana olisi ehkä kokeilla erilaisia algorytmejä.
+Briteissä tunnettu visailu ohjelma countdownin letters round sovellus siis kyseessä. Sovellus:
+- Antaa satunnaisen konsonantin tai vokaalin nappia painamalla
+- Palauttaa (max 5) pisintä suomenkielen sanaa (xml tiedosto), mitä satunnaisista tekstikentän kirjaimista pystyy muodostaa
+- Kertoo konsolissa kauan sanojen haku kesti
 
-## Aloitus
+Tarkoitus alussa oli tutkia algorytmejä ja kuika niitä voisi tähän sananhakuun liittää. Kuitenkin se osoittautui vaikeaksi. Teemun suosittelema generaatiofunktio oli täyisin uusi asia ja lähdin sitä opettelemaan tuossa satunnais vokaali/konsonantti osassa.
 
-### create-react-app letters
+## Teknologiat
 
-Aluksi tehdään react työpohja, johonka sovellusta lähdetään luomaan. Tässä alkuvaiheessa etsin myös käsiini listan suomen sanoista jotka löytyi Kotimaisten kielten keskukselta: https://kaino.kotus.fi/sanat/nykysuomi/
+Sovellus on tehty reactilla nettisivuksi. Reactissa käytettyjä juttuja: 
 
-### Inputin luonti
+- useState = Hook
+- DomParser = Create a new DOM parser
+- node.textContent = Extract the text content of each element
+- function* = Generator function
 
-Alkuun haluan, luoda inputin, josta sovellus saa ne kirjaimet, jolla sanaa etsitään sanalistasta.
+Sovellus ja varsinkin sen kommentit luotu tekoälyn avulla: https://chat.openai.com
 
-          <form onSubmit={handleSubmit}>
-        <label>
-          Enter 9 letters:
-          <input type="text" value={input} onChange={handleChange} />
-        </label>
-        <button type="submit">Find longest words</button>
-      </form>
-      
-Luodaan usestate inputille
 
-    const [input, setInput] = useState('');
-    
-Luodaan funktio joka handlaa inputtia
 
-    const handleChange = (e) => {
-    setInput(e.target.value);
-    };
-
-### Luodaan countLetter jas canFormWord funktiot
-
-Aikaa säästääkseni selitän nyt vain suullisesti. 
-  
-  
   
   
   
